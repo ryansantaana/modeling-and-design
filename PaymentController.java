@@ -26,7 +26,7 @@ public class PaymentController implements ActionListener {
 			String input = JOptionPane.showInputDialog("Enter tender Amount");
 			double inputDouble;
 			try {
-				if (input.indexOf('.') < input.length() - 3) {
+				if (input.contains(".") && input.indexOf('.') < input.length() - 3) {
 					inputDouble = Double.parseDouble(input);
 					JOptionPane.showMessageDialog(null, "Cannot pay a fraction of a cent!");
 					return;
